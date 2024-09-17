@@ -1,7 +1,7 @@
-import { app } from "./app";
+import { Elysia } from "elysia";
+import { middleware } from "./middleware";
 
-export default {
-  async fetch(request: Request): Promise<Response> {
-    return await app.fetch(request);
-  }
-}
+export const app = new Elysia()
+	.use(middleware)
+	.get("/", () => "Hello from Elysia 🦊")
+	.listen(process.env.PORT ?? 3000);
