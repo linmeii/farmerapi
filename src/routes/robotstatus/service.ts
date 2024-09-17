@@ -17,7 +17,7 @@ export abstract class robotStatusService {
 	static async upsert(body: robotStatusInsert): Promise<void> {
 		await db
 			.insert(robotStatusTable)
-			.values({ id: body.id, value: body.value })
+			.values(body)
 			.onDuplicateKeyUpdate({ set: { value: body.value } });
 	}
 }

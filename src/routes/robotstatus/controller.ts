@@ -1,4 +1,4 @@
-import Elysia from "elysia";
+import Elysia, { t } from "elysia";
 import { robotStatusService } from "./service";
 import { robotStatusModel } from "./model";
 
@@ -10,6 +10,9 @@ export const robotStatusController = new Elysia({
 		detail: { tags: ["robotstatus"] },
 	})
 	.post("/", async ({ body }) => robotStatusService.upsert(body), {
-		body: "robotstatus.upsert",
+		body: t.Object({
+			id: t.Number(),
+			value: t.Boolean(),
+		}),
 		detail: { tags: ["robotstatus"] },
 	});

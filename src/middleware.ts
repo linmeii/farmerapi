@@ -7,17 +7,19 @@ import { Logestic } from "logestic";
 export const middleware = new Elysia()
 	.use(Logestic.preset("fancy"))
 	.use(
-		staticPlugin({
-			assets: "public",
-			prefix: "/",
+		swagger({
+			documentation: {
+				tags: [
+					{ name: "robotstatus", description: "Robot status operations" },
+					{ name: "storage", description: "Storage operations" },
+				],
+			},
 		}),
 	)
 	.use(
-		swagger({
-			documentation: {
-				info: { title: "Farmer API", version: "1.0.0" },
-				tags: [{ name: "robotstatus", description: "Robot status operations" }],
-			},
+		staticPlugin({
+			assets: "public",
+			prefix: "/",
 		}),
 	)
 	.use(cors());
