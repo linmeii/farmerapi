@@ -1,0 +1,47 @@
+{
+  "version": "5",
+  "dialect": "mysql",
+  "id": "a23c9616-1016-4bc6-95c3-c03be98f9eef",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "tables": {
+    "robot_status": {
+      "name": "robot_status",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "value": {
+          "name": "value",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {
+        "robot_status_id": {
+          "name": "robot_status_id",
+          "columns": [
+            "id"
+          ]
+        }
+      },
+      "uniqueConstraints": {}
+    }
+  },
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  },
+  "internal": {
+    "tables": {},
+    "indexes": {}
+  }
+}

@@ -6,15 +6,22 @@
 		"build": "bun build src/index.ts --target bun --outdir ./dist",
 		"start": "NODE_ENV=production bun dist/index.js",
 		"test": "bun test",
-		"lint": "biome lint"
+		"lint": "biome lint",
+		"db:generate": "drizzle-kit generate",
+		"db:migrate": "drizzle-kit migrate"
 	},
 	"dependencies": {
+		"@t3-oss/env-core": "^0.11.1",
+		"drizzle-orm": "^0.33.0",
 		"elysia": "latest",
-		"logestic": "^1.2.3"
+		"logestic": "^1.2.3",
+		"mysql2": "^3.11.3",
+		"zod": "^3.23.8"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.1",
-		"bun-types": "latest"
+		"bun-types": "latest",
+		"drizzle-kit": "^0.24.2"
 	},
 	"module": "src/index.js"
 }
