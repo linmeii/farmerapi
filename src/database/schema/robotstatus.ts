@@ -5,5 +5,5 @@ export const robotStatusTable = mysqlTable("robot_status", {
 	value: boolean("value").notNull(),
 });
 
-export type RobotStatus = typeof robotStatusTable.$inferSelect;
-export type RobotStatusInsert = typeof robotStatusTable.$inferInsert;
+export type robotStatus = typeof robotStatusTable.$inferSelect;
+export type robotStatusInsert = typeof robotStatusTable.$inferInsert;
