@@ -1,17 +1,20 @@
 {
-  "name": "farmerapi",
-  "version": "1.0.50",
-  "scripts": {
-    "dev": "bun run --watch src/index.ts",
-    "lint": "biome lint"
-  },
-  "dependencies": {
-    "elysia": "latest",
-    "logestic": "^1.2.3"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^1.9.1",
-    "bun-types": "latest"
-  },
-  "module": "src/index.js"
+	"name": "farmerapi",
+	"version": "1.0.50",
+	"scripts": {
+		"dev": "bun --watch src/index.ts",
+		"build": "bun build src/index.ts --target bun --outdir ./dist",
+		"start": "NODE_ENV=production bun dist/index.js",
+		"test": "bun test",
+		"lint": "biome lint"
+	},
+	"dependencies": {
+		"elysia": "latest",
+		"logestic": "^1.2.3"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.1",
+		"bun-types": "latest"
+	},
+	"module": "src/index.js"
 }
